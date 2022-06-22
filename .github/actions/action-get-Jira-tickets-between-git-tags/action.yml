@@ -1,0 +1,20 @@
+# every action has a name
+name: Find Jira Tickets Between Git Tags
+# description
+description: This action finds all Jira tickets from commit messages based on user inputs
+# input parameters to be taken from user
+inputs:
+  path:
+    required: true
+    description: on which repository to start searching
+  from_tag:
+    required: true
+    description: from which tag to start searching
+  to_tag:
+    required: true
+    description: search up to this tag
+
+# definition how we want our action
+runs:
+  using: docker # we are saying this action will run on docker
+  image: 'Dockerfile' # we will use our own Dockerfile to build an image and run it.
